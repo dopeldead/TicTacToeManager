@@ -10,7 +10,15 @@ namespace TicTacToeManager
     {
         public static bool Init()
         {
+
             throw new NotImplementedException();
+            try
+            {
+                //loadjson
+            }catch(Exception ex)
+            {
+                //no network, no json, error....
+            }
         }
 
         public static string Json

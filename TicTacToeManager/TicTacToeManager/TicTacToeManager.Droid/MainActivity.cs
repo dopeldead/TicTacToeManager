@@ -15,6 +15,10 @@ namespace TicTacToeManager.Droid
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+            if (!DataContext.Init())
+            {
+                throw new InvalidOperationException("Couldn't load Json");
+            }
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);	
 		}
