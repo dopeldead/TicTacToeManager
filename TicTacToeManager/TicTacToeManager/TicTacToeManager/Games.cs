@@ -8,5 +8,9 @@ namespace TicTacToeManager
 {
    public class Game
     {
+        public int Id { get; set; }
+        public User Player1 { get; set; }
+        public User Player2 { get; set; }
+        public User Winner { get; set; }
     }
 }
