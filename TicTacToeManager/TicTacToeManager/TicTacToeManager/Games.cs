@@ -13,10 +13,10 @@ namespace TicTacToeManager
         [JsonProperty( "GameId" )]
         public int Id { get; set; }
         [JsonProperty( "P1" )]
-        public User Player1 { get; set; }
+        public int Player1Id { get; set; }
         [JsonProperty( "P2" )]
-        public User Player2 { get; set; }
+        public int Player2Id { get; set; }
         [JsonProperty( "Winner" )]
-        public User Winner { get; set; }
+        public int Winner { get; set; }
     }
 }
