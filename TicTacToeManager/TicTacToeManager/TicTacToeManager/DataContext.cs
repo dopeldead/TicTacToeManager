@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace TicTacToeManager
 {
@@ -11,12 +11,27 @@ namespace TicTacToeManager
         public static bool Init()
         {
 
-            throw new NotImplementedException();
             try
             {
-                //loadjson
-            }catch(Exception ex)
+
+                Uri url = new Uri("https://api.myjson.com/bins/4rvko");
+                
+                string checkResult = null;
+
+                using( var httpClient = new HttpClient() )
+                {
+                    var result = httpClient.GetStringAsync(url);
+                    checkResult = result.ToString();                                    
+                }
+
+                JsonRootObject  JsonObject = JsonConvert.DeserializeObject<JsonRootObject>(checkResult);
+                Users = JsonObject.UserList;
+                Games = JsonObject.GameList;
+                return true;
+            }
+            catch(Exception)
             {
+                return false;
                 //no network, no json, error....
             }
         }
