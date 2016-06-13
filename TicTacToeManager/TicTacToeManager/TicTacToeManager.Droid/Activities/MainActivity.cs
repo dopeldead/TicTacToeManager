@@ -35,7 +35,10 @@ namespace TicTacToeManager.Droid
             if (user != null)
             {
                 Settings.UserName = user.UserName;
-                //nextpage
+                var intent = new Intent(this, typeof(ProfileActivity));
+               
+                StartActivity(intent);
+                this.Finish();
             }
             else
             {

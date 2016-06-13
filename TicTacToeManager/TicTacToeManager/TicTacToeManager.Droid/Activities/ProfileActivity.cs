@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace TicTacToeManager.Droid.Activities
+namespace TicTacToeManager.Droid
 {
     [Activity(Label = "ProfileActivity")]
     public class ProfileActivity : Activity
@@ -18,6 +18,7 @@ namespace TicTacToeManager.Droid.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Profile);
 
             // Create your application here
         }

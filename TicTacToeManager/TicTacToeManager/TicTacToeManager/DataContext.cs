@@ -20,7 +20,7 @@ namespace TicTacToeManager
 
                 using( var httpClient = new HttpClient() )
                 {
-                    var result = httpClient.GetStringAsync(url);
+                    var result = httpClient.GetStringAsync(url).Result;
                     checkResult = result.ToString();                                    
                 }
 
